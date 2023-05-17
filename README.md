@@ -33,7 +33,12 @@ And you should see a similar output to the following (version may vary):
 
 ***You must have a local Docker image of Arista cEOS 4.28.4M.***
 
-***You can download a cEOS `.tar.xz` file from Arista's support website and use `docker load` to load the image into your local Docker instance. Please check Arista's support site for more information. Note: You must have an Arista account to download the image.***
+***You can download a cEOS `.tar.xz`/`.tar` file from Arista's support website and use `docker load` or `docker import` to load the image into your local Docker instance. Here's an example of using `docker import` (assuming you've downloaded the 4.28.4M image).***
+```
+cat cEOS-lab-4.28.4M.tar | docker import - ceos:4.28.4M
+```
+
+***Please check Arista's support site for more information. Note: You must have an Arista account to download the image.***
 
 **Topology definition**: The containerlab topology is defined in `tttt.clab.yml`. Check out that file for more details about the nodes being deployed in the lab. If you have any questions about specific properties, here's a link to containerlab's node documentation: [node docs](https://containerlab.dev/manual/nodes/)
 
